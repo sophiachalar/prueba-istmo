@@ -50,7 +50,7 @@ function itemPokemonFavorito(datosPokemon) {
     div.dataset.id = datosPokemon.id;
 
     // estrella ya marcada como favorito
-    const estrellaSrc = "/assets/estrella-despues.png";
+    const estrellaSrc = "../assets/estrella-despues.png";
 
     div.innerHTML = `
         <div class="favoritos" id="favoritos">
@@ -139,7 +139,7 @@ function verModal(datosPokemon) {
 
     // verificar si el pokemon esta en los favoritos
     const esFavorito = getFavoritos().some(pokemonFavorito => pokemonFavorito.id === datosPokemon.id);
-    const estrellaSrc = esFavorito ? '/assets/estrella-despues.png' : '/assets/estrella-antes.png';  // Cambiar la imagen según el estado del favorito
+    const estrellaSrc = esFavorito ? '../assets/estrella-despues.png' : '../assets/estrella-antes.png';  // Cambiar la imagen según el estado del favorito
 
     const modal = `
         <div class="pokemon-card">
@@ -193,7 +193,7 @@ function verModal(datosPokemon) {
 
         // actualizamos la imagen de la estrella dependiendo del nuevo estado
         const esFavoritoNuevo = getFavoritos().some(pokemonFavorito => pokemonFavorito.id === datosPokemon.id);
-        estrellaModal.src = esFavoritoNuevo ? '/assets/estrella-despues.png' : '/assets/estrella-antes.png';
+        estrellaModal.src = esFavoritoNuevo ? '../assets/estrella-despues.png' : '../assets/estrella-antes.png';
     });
 }
 

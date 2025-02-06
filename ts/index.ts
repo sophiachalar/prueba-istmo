@@ -44,7 +44,7 @@ function itemPokemon(data: any): void {
     // ver si el pokemon ya esta favorito
     const isFavorito = getFavoritos().some(pokemon => pokemon.id === data.id);
     // si esta guardado como favorito va a poner la estrella amarilla
-    const estrellaSrc = isFavorito ? "/assets/estrella-despues.png" : "/assets/estrella-antes.png";
+    const estrellaSrc = isFavorito ? "../assets/estrella-despues.png" : "../assets/estrella-antes.png";
 
     // este es el bloque con el html de la informacion del pokemon
     div.innerHTML = `
@@ -110,7 +110,7 @@ function actualizarEstrella(id: number): void {
     const estrella = pokemonElement.querySelector(".estrella button img") as HTMLImageElement;
     // realiza el cambio de imagen segun su estado
     const isFavorito = getFavoritos().some(pokemon => pokemon.id === id);
-    estrella.src = isFavorito ? "/assets/estrella-despues.png" : "/assets/estrella-antes.png";
+    estrella.src = isFavorito ? "../assets/estrella-despues.png" : "../assets/estrella-antes.png";
 }
 
 // barra de busqueda
@@ -230,7 +230,7 @@ function verModal(pokemon: any): void {
 
     // verifica si es favorito o no para cargar la estrella que corresponde
     const esFavorito = getFavoritos().some(pokemonFavorito => pokemonFavorito.id === pokemon.id);
-    const estrellaSrc = esFavorito ? '/assets/estrella-despues.png' : '/assets/estrella-antes.png';  // Cambiar la imagen según el estado del favorito
+    const estrellaSrc = esFavorito ? '../assets/estrella-despues.png' : '../assets/estrella-antes.png';  // Cambiar la imagen según el estado del favorito
 
     // crea el html para el modal
     const modal = `

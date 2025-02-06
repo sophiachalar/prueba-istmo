@@ -38,7 +38,7 @@ function itemPokemon(data) {
     // ver si el pokemon ya esta favorito
     var isFavorito = getFavoritos().some(function (pokemon) { return pokemon.id === data.id; });
     // si esta guardado como favorito va a poner la estrella amarilla
-    var estrellaSrc = isFavorito ? "/assets/estrella-despues.png" : "/assets/estrella-antes.png";
+    var estrellaSrc = isFavorito ? "../assets/estrella-despues.png" : "../assets/estrella-antes.png";
     // este es el bloque con el html de la informacion del pokemon
     div.innerHTML = "\n        <div class=\"favoritos\" id=\"favoritos\">\n            <div class=\"idPokemon\" id=\"idPokemon\">\n                <p>#".concat(data.id, "</p>\n            </div>\n            <div class=\"estrella\" id=\"estrella\">\n                <button onclick=\"toggleFavorito(").concat(data.id, ")\">\n                    <img src=\"").concat(estrellaSrc, "\" alt=\"estrella\">\n                </button>\n            </div>\n        </div>\n        <div class=\"img-pokemon\" id=\"img-pokemon\">\n            <img src=\"").concat(data.sprites.other.dream_world.front_default, "\" alt=\"").concat(data.name, "\">\n        </div>\n        <div class=\"sobre-pokemon\">\n            <div class=\"nombre-pokemon\" id=\"nombre-pokemon\">\n                <p class=\"nombre\">").concat(data.name, "</p>\n            </div>\n            <div class=\"tipo-pokemon\" id=\"tipo-pokemon\">\n                ").concat(tipos, "\n            </div>\n        </div>\n    ");
     // esto se va a agregar a la lista con todos los pokemones
@@ -75,7 +75,7 @@ function actualizarEstrella(id) {
     var estrella = pokemonElement.querySelector(".estrella button img");
     // realiza el cambio de imagen segun su estado
     var isFavorito = getFavoritos().some(function (pokemon) { return pokemon.id === id; });
-    estrella.src = isFavorito ? "/assets/estrella-despues.png" : "/assets/estrella-antes.png";
+    estrella.src = isFavorito ? "../assets/estrella-despues.png" : "../assets/estrella-antes.png";
 }
 // barra de busqueda
 inputBuscar.addEventListener("input", function () {
@@ -167,7 +167,7 @@ function verModal(pokemon) {
     }).join('');
     // verifica si es favorito o no para cargar la estrella que corresponde
     var esFavorito = getFavoritos().some(function (pokemonFavorito) { return pokemonFavorito.id === pokemon.id; });
-    var estrellaSrc = esFavorito ? '/assets/estrella-despues.png' : '/assets/estrella-antes.png'; // Cambiar la imagen según el estado del favorito
+    var estrellaSrc = esFavorito ? '../estrella-despues.png' : '../assets/estrella-antes.png'; // Cambiar la imagen según el estado del favorito
     // crea el html para el modal
     var modal = "\n        <div class=\"pokemon-card\">\n            <div class=\"favoritos\" id=\"favoritos\">\n                <div class=\"idPokemon-modal\" id=\"idPokemon-modal\">\n                    <p>#".concat(pokemon.id, "</p>\n                </div>\n                <div class=\"estrella\" id=\"estrella\">\n                    <button onclick=\"toggleFavorito(").concat(pokemon.id, ")\">\n                        <img src=\"").concat(estrellaSrc, "\" alt=\"estrella\" id=\"estrella-modal\">\n                    </button>\n                </div>\n            </div>\n            <div class=\"img-pokemon-modal\" id=\"img-pokemon-modal\">\n                <img src=\"").concat(pokemon.sprites.other.dream_world.front_default, "\" alt=\"").concat(pokemon.name, "\">\n            </div>\n            <div class=\"sobre-modal\">\n                <div class=\"nombre-modal\" id=\"nombre-modal\">\n                    <p class=\"nombre\">").concat(pokemon.name, "</p>\n                </div>\n                <div class=\"tipo-modal\" id=\"tipo-modal\">\n                    <div class=\"titulo-tipos\">Tipos</div>\n                    <div class=\"tipos\">\n                        ").concat(tipos, "\n                    </div>\n                </div>\n                <div class=\"habilidades-modal\">\n                    <div class=\"titulo-habilidades\">Habilidades</div>\n                    <div class=\"habilidades\">\n                        ").concat(habilidades, "\n                    </div>\n                </div>\n                <div class=\"estadisticas-modal\">\n                    ").concat(estadisticas, "\n                </div>\n            </div>\n        </div>\n    ");
     // carga y muestra el modal
