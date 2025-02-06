@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+        <title>Pokedex</title>
+    </head>
+    <body>
+        <header>
+            <!-- esta es la barra de navegacion -->
+            <nav>
+                <!-- aqui carga la imagen de pokedex-->
+                <div class="img-pokedex" id="img-pokedex">
+                    <img src="/assets/logo-pokedex.webp" alt="logo-pokedex" href="/html/index.html">
+                    <a href="/html/index.html"></a>
+                </div>
+                <!-- aqui carga la barra de navegacion-->
+                <div class="opcion-buscar">
+                    <input type="text" class="input-buscar" id="input-buscar" placeholder="Buscar pokemon">
+                </div>
+                <!-- aqui caega la imagen de estrella para acceder a favoritos -->
+                <div class="img-favs" id="img-favs">
+                    <a href="/html/favoritos.html"><img src="/assets/estrella-despues.png"></a>
+                </div>
+                <!-- aqui carga el switch del modo nocturno-->
+                <div class="switch">
+                    <label>
+                        <input type="checkbox" class="toggle" id="toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </nav>
+            <div class="lista-sugerencias" id="lista-sugerencias">
+                <!-- esta va a ser la lista de sugerencias de la busqueda -->
+            </div>
+        </header>
+
+        <!-- seccion general donde carga los pokemones -->
+        <main>
+            <div class="bloque-completo">
+                <div class="lista-general" id="lista-general">
+                    <!-- aqui van a estar todos los pokemones -->
+                </div>
+            </div>
+        </main>
+
+        <!-- modal -->
+        <div class="pokemon-modal" id="pokemon-modal">
+            <div class="modal-completo" id="modal-completo">
+
+            </div>
+        </div>
+    </body>
+    <script src="/ts/index.js"></script>
+</html>

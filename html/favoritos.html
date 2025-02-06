@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/index.css" rel="stylesheet" type="text/css">
+    <title>Favoritos</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="img-pokedex" id="img-pokedex">
+                <a href="/html/index.html">
+                    <img src="/assets/logo-pokedex.webp" alt="logo-pokedex">
+                </a>
+            </div>
+            <!-- aqui carga la barra de navegacion-->
+            <div class="opcion-buscar">
+                <input type="text" class="input-buscar" id="input-buscar" placeholder="Buscar pokemon">
+            </div>
+            <!-- aqui caega la imagen de estrella para acceder a favoritos -->
+            <div class="img-favs" id="img-favs">
+                <a href="/html/favoritos.html"><img src="/assets/estrella-despues.png"></a>
+            </div>
+            <div class="switch">
+                <label>
+                    <input type="checkbox" class="toggle" id="toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </nav>
+        <div class="lista-sugerencias" id="lista-sugerencias"></div>
+    </header>
+
+    <main>
+        <div class="bloque-completo">
+            <div class="lista-general" id="lista-general">
+                
+            </div>
+        </div>
+    </main> 
+
+    <!-- Modal -->
+    <div class="pokemon-modal" id="pokemon-modal">
+        <div class="modal-completo" id="modal-completo">
+            <!-- Aquí se cargarán los detalles del Pokémon -->
+        </div>
+    </div>
+</body>
+<script src="/ts/favoritos.js"></script>
+
+</html>
